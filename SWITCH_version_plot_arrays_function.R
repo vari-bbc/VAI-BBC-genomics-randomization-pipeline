@@ -12,7 +12,7 @@ library(roxygen2)
 #### use roxygen2
 
 # add a section to the app that tells the client how many BCs they'll need
-fill_BCs <- function(data, dynamic_array_type = c("GSA", "EPIC", "Mouse_Methyl")) {
+fill_BCs <- function(data, dynamic_array_type = c("GSA", "EPIC", "Mouse-Methyl")) {
   
   if(dynamic_array_type == "GSA") {
     # one beachip can hold 24 samples
@@ -22,7 +22,7 @@ fill_BCs <- function(data, dynamic_array_type = c("GSA", "EPIC", "Mouse_Methyl")
   } else if (dynamic_array_type == "EPIC") {
     numBCs <- length(data$ID) / 8
     
-  } else if (dynamic_array_type == "Mouse_Methyl") {
+  } else if (dynamic_array_type == "Mouse-Methyl") {
     numBCs <- length(data$ID) / 12
   }
   # needs to be ceiling bc if we're using a fraction of a BC, then we're using all of it
